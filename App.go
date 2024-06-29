@@ -31,10 +31,7 @@ func userInput() {
 		scanner.Scan()
 		temperatures, _ := strconv.Atoi(scanner.Text())
 
-		fmt.Println("insert the category ")
-		scanner.Scan()
-		categories := scanner.Text()
-		createC(temperatures, categories)
+		createC(temperatures)
 	case "b":
 		fmt.Println("insert the fahrenheit temperature (int)")
 		scanner.Scan()
@@ -47,18 +44,18 @@ func userInput() {
 	}
 }
 
-func createC(temperature int, category string) {
+func createC(temperature int) {
 	var c temp.Celsius
-	m := make(map[string]int)
 
-	c.Temperature = temperature
-	c.Category = category
-
-	m[c.Category] = c.Temperature
-
-	for k, v := range m {
-		fmt.Printf("category : %s temperature : %d", k, v)
+	if temperature > 23 {
+		c = temp.Celsius{Temperature: temperature, Category: "hot"}
+		fmt.Println("celsius temperature : ", c)
+	} else {
+		c = temp.Celsius{Temperature: temperature, Category: "cold"}
+		fmt.Println("celsius temperature : ", c)
 	}
+	toFahrenheit := temp.ToFahrenheit(c)
+	fmt.Println("fahrenheit -> celsius :", toFahrenheit, "Fahrenheit")
 }
 
 func createF(temp int, categ string) {
