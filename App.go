@@ -53,6 +53,13 @@ func userInput() {
 		tempRan, _ := strconv.Atoi(scanner.Text())
 
 		createRan(tempRan)
+
+	case "e":
+		fmt.Println("insert the reaumur temperature (int)")
+		scanner.Scan()
+		tempRea, _ := strconv.Atoi(scanner.Text())
+
+		createRea(tempRea)
 	}
 
 }
@@ -105,10 +112,27 @@ func createRan(tempRan int) {
 
 	if tempRan > 20 {
 		ran = temp.Rankine{Temperature: tempRan, Category: "hot temperature"}
+		fmt.Println("rankine temperature :", ran)
 	} else {
 		ran = temp.Rankine{Temperature: tempRan, Category: "cold temperature"}
+		fmt.Println("rankine temperature :", ran)
 	}
 
 	toReaumur := temp.ToReaumur(ran)
 	fmt.Println("rankine -> reaumur :", toReaumur, "reaumur")
+}
+
+func createRea(tempRea int) {
+	var rea temp.Reaumur
+
+	if tempRea > 25 {
+		rea = temp.Reaumur{Temperature: tempRea, Category: "hot temperature"}
+		fmt.Println("reaumur temperature :", rea)
+	} else {
+		rea = temp.Reaumur{Temperature: tempRea, Category: "cold temperature"}
+		fmt.Println("reaumur temperature :", rea)
+	}
+
+	toCelsius := temp.ToCelsius(rea)
+	fmt.Println("reaumur -> celsius :", toCelsius, "celsius")
 }
