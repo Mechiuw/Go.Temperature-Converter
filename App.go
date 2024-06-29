@@ -38,7 +38,15 @@ func userInput() {
 		tempF, _ := strconv.Atoi(scanner.Text())
 
 		createF(tempF)
+
+	case "c":
+		fmt.Println("insert the kelvin temperature (int)")
+		scanner.Scan()
+		tempK, _ := strconv.Atoi(scanner.Text())
+
+		createK(tempK)
 	}
+
 }
 
 func createC(temperature int) {
@@ -82,4 +90,8 @@ func createK(tempK int) {
 
 	toRankine := temp.ToRankine(k)
 	fmt.Println("kelvin -> rankine", toRankine, "Rankine")
+}
+
+func createRan(tempRan int) {
+	var ran temp.Rankine
 }
