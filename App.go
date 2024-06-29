@@ -68,3 +68,8 @@ func createF(tempF int) {
 	toKelvin := temp.ToKelvin(f)
 	fmt.Println("fahrenheit -> kelvin", toKelvin, "Kelvin")
 }
+
+func createK(tempK int) {
+	var k temp.Kelvin
+
+}
