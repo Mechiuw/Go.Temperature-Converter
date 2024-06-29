@@ -6,5 +6,5 @@ type Kelvin struct {
 }
 
 func ToRankine(k Kelvin) float64 {
-	return (float64(k.Temperature) * 1.8)
+	return (float64(k.Temperature) * 9 / 5)
 }
