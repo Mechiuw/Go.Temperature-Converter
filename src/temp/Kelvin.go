@@ -2,7 +2,7 @@ package temp
 
 type Kelvin struct {
 	Temperature int
-	Category    int
+	Category    string
 }
 
 func ToRankine(k Kelvin) float64 {

@@ -72,4 +72,14 @@ func createF(tempF int) {
 func createK(tempK int) {
 	var k temp.Kelvin
 
+	if tempK > 22 {
+		k = temp.Kelvin{Temperature: tempK, Category: "hot temperature"}
+		fmt.Println("kelvin temperature :", k)
+	} else {
+		k = temp.Kelvin{Temperature: tempK, Category: "cold temperature"}
+		fmt.Println("kelvin temperature :", k)
+	}
+
+	toRankine := temp.ToRankine(k)
+	fmt.Println("kelvin -> rankine", toRankine, "Rankine")
 }
