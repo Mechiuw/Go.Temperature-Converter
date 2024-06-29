@@ -16,6 +16,7 @@ func menu() {
 	fmt.Println("b) fahrenheit -> kelvin")
 	fmt.Println("c) kelvin -> rankine")
 	fmt.Println("d) rankine -> reaumur")
+	fmt.Println("e) reaumur -> celsius")
 }
 
 func userInput() {
