@@ -74,7 +74,7 @@ func createF(tempF int) {
 		fmt.Println("fahrenheit tempereture :", f)
 	}
 	toKelvin := temp.ToKelvin(f)
-	fmt.Println("fahrenheit -> kelvin", toKelvin, "Kelvin")
+	fmt.Println("fahrenheit -> kelvin :", toKelvin, "Kelvin")
 }
 
 func createK(tempK int) {
@@ -89,9 +89,18 @@ func createK(tempK int) {
 	}
 
 	toRankine := temp.ToRankine(k)
-	fmt.Println("kelvin -> rankine", toRankine, "Rankine")
+	fmt.Println("kelvin -> rankine :", toRankine, "Rankine")
 }
 
 func createRan(tempRan int) {
 	var ran temp.Rankine
+
+	if tempRan > 20 {
+		ran = temp.Rankine{Temperature: tempRan, Category: "hot temperature"}
+	} else {
+		ran = temp.Rankine{Temperature: tempRan, Category: "cold temperature"}
+	}
+
+	toReaumur := temp.ToReaumur(ran)
+	fmt.Println("rankine -> reaumur :", toReaumur, "reaumur")
 }
